@@ -3,14 +3,23 @@
 {% block content %}
 
     <div class="container mt-5">
+
+<div class="card">
+    <div class="card-body">
         <p class="alert alert-danger">Are you sure you want to delete "{{item}}"?</p>
 
-        <a class="btn btn-sm btn-danger" href="{% url 'list' %}" >Cancel</a>
+        <div class="d-flex">
+            <a class="btn btn-warning mr-2" href="{% url 'list' %}" >Cancel</a>
 
-        <form method="POST" action="">
-            {% csrf_token %}
-            <input  type="submit" name="Confirm">
-        </form>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input class="btn btn-danger"  type="submit" name="Confirm">
+            </form>
+        </div>
+    </div>
+</div>
+
+
     </div>
 
 {% endblock %}

@@ -1,29 +1,46 @@
 {% extends 'tasks/base.html' %}
 
 {% block content %}
-    <div class="center-column">
+    <div class="container mt-5">
 
-        <form method="POST" action="/">
+    <div class="row h-100 d-flex align-items-center justify-content-center">
+
+<div class="col-md-6 mx-auto">
+<div class="card">
+
+    <div class="card-header">
+        <h1 class="h3 text-center">Add Task</h1>
+    </div>
+
+<div class="card-body">
+    <form method="POST" action="/">
             {% csrf_token %}
             {{form.title}}
-            <input class="btn btn-info" type="submit" name="Create Task">
-        </form>
+            <input class="btn btn-info btn-block my-4" type="submit" name="Create Task">
+    </form>
 
-        <div class="todo-list">
+    <div class="todo-list">
 
-            {% for task in tasks %}
-                <div class="item-row">
-                    <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
-                    <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+        {% for task in tasks %}
+            <div class="alert alert-success">
+                <a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
+                <a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
 
-                    {% if task.complete == True %}
-                        <strike>{{task}}</strike>
-                    {% else %}
-                        <span>{{task}}</span>
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </div>
+                {% if task.complete == True %}
+                    <strike>{{task}}</strike>
+                {% else %}
+                    <span>{{task}}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+    </div>
+
+    </div>
+    </div>
     </div>
 {% endblock %}
 
