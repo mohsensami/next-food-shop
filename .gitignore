@@ -9,6 +9,5 @@ uploads/
 **/__pycache__/
 *.pyc
 
-db.sqlite3
 # local_settings.py
 .DS_Store
