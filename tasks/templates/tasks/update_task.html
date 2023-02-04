@@ -5,20 +5,36 @@
 <div class="container mt-5">
 
 
-<div class="col-md-6 mx-auto">
-<div class="card">
-  <div class="card-header">
-    <h1 class="h3 text-center">Update Task</h1>
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        <h1 class="h3 text-center">Update Task</h1>
+      </div>
+      <div class="card-body">
+        <form method="POST" action="">
+          {% csrf_token %}
+          <div class="form-row align-items-center">
+
+
+            <div class="form-group">
+              {{form.title}}
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                {{form.complete}}
+                <label class="form-check-label" for="gridCheck">
+                  Complete
+                </label>
+              </div>
+            </div>
+
+          </div>
+          <input class="btn btn-info btn-block" type="submit" name="Update Task">
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-      <form method="POST" action="">
-        {% csrf_token %}
-        {{form}}
-    <input class="btn btn-info btn-block" type="submit" name="Update Task">
-    </form>
-  </div>
-</div>
-</div>
 
 </div>
 
