@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
 
 from .models import *
 from .forms import *
@@ -43,6 +44,7 @@ def deleteTask(request, pk):
 
     if request.method == 'POST':
         item.delete()
+        messages.success(request, 'Todo deleted successfully', 'success')
         return redirect('/')
 
     context = {'item': item}
