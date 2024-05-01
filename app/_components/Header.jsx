@@ -54,13 +54,13 @@ function Header() {
                     <Popover>
                         <PopoverTrigger asChild>
                             <div className="flex gap-2 items-center cursor-pointer">
-                                <ShoppingCart />
-                                <label className="p-1 px-3 rounded-full bg-slate-200">{cart?.length}</label>
+                                {/* <ShoppingCart /> */}
+                                {/* <label className="p-1 px-3 rounded-full bg-slate-200">{cart?.length}</label> */}
                             </div>
                         </PopoverTrigger>
-                        <PopoverContent className="w-full">
+                        {/* <PopoverContent className="w-full">
                             <Cart cart={cart} />
-                        </PopoverContent>
+                        </PopoverContent> */}
                     </Popover>
 
                     {/* <UserButton/> */}

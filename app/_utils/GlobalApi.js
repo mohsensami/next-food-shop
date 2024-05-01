@@ -77,7 +77,7 @@ const GetBusinessDetail = async (businessSlug) => {
           id
           category
           menuItem {
-            ... on MenuItems {
+            ... on MenuItem {
               id
               name
               description
