@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Intro from '../_components/Intro';
 
-// import RestroTabs from '../_components/RestroTabs';
+import RestroTabs from '../_components/RestroTabs';
 
 function RestaurantDetails() {
     const param = usePathname();
@@ -21,7 +21,7 @@ function RestaurantDetails() {
     return (
         <div>
             <Intro restaurant={restaurant} />
-            {/* <RestroTabs restaurant={restaurant} /> */}
+            <RestroTabs restaurant={restaurant} />
         </div>
     );
 }
