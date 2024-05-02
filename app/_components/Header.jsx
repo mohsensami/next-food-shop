@@ -4,8 +4,8 @@ import { SignInButton, SignOutButton, SignUpButton, UserButton, useUser } from '
 import { Search, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import React, { useContext, useEffect, useState } from 'react';
-// import { CartUpdateContext } from '../_context/CartUpdateContext';
-// import GlobalApi from '../_utils/GlobalApi';
+import { CartUpdateContext } from '../_context/CartUpdateContext';
+import GlobalApi from '../_utils/GlobalApi';
 import Link from 'next/link';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 // import Cart from './Cart';
@@ -20,12 +20,12 @@ import {
 
 function Header() {
     const { user, isSignedIn } = useUser();
-    // const { updateCart, setUpdateCart } = useContext(CartUpdateContext);
-    // const [cart, setCart] = useState([]);
-    // useEffect(() => {
-    //     console.log('Execute Me!');
-    //     user && GetUserCart();
-    // }, [updateCart || user]);
+    const { updateCart, setUpdateCart } = useContext(CartUpdateContext);
+    const [cart, setCart] = useState([]);
+    useEffect(() => {
+        console.log('Execute Me!');
+        user && GetUserCart();
+    }, [updateCart || user]);
 
     const GetUserCart = () => {
         GlobalApi.GetUserCart(user?.primaryEmailAddress.emailAddress).then((resp) => {
@@ -55,7 +55,7 @@ function Header() {
                         <PopoverTrigger asChild>
                             <div className="flex gap-2 items-center cursor-pointer">
                                 <ShoppingCart />
-                                <label className="p-1 px-3 rounded-full bg-slate-200">{/* {cart?.length} */}0</label>
+                                <label className="p-1 px-3 rounded-full bg-slate-200">{cart?.length}</label>
                             </div>
                         </PopoverTrigger>
                         {/* <PopoverContent className="w-full">

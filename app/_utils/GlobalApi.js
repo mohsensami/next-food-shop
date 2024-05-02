@@ -142,13 +142,7 @@ const GetUserCart = async (userEmail) => {
       productDescription
       productImage
       productName
-      restaurant {
-        name
-        banner {
-          url
-        }
-        slug
-      }
+
     }
   }
   `;

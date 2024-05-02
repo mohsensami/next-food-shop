@@ -1,4 +1,4 @@
-// import { CartUpdateContext } from '@/app/_context/CartUpdateContext';
+import { CartUpdateContext } from '@/app/_context/CartUpdateContext';
 import GlobalApi from '@/app/_utils/GlobalApi';
 import { Button } from '@/components/ui/button';
 import { useUser } from '@clerk/nextjs';
@@ -10,7 +10,7 @@ import { toast } from 'sonner';
 function MenuSection({ restaurant }) {
     // const [menuItemList, setMenuItemList] = useState([]);
     const { user } = useUser();
-    // const { updateCart, setUpdateCart } = useContext(CartUpdateContext);
+    const { updateCart, setUpdateCart } = useContext(CartUpdateContext);
     // useEffect(() => {
     //     restaurant?.menu && FilterMenu(restaurant?.menu[0]?.category);
     // }, [restaurant]);
