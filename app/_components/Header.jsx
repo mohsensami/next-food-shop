@@ -8,7 +8,8 @@ import { CartUpdateContext } from '../_context/CartUpdateContext';
 import GlobalApi from '../_utils/GlobalApi';
 import Link from 'next/link';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-// import Cart from './Cart';
+import Cart from './Cart';
+
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -58,9 +59,10 @@ function Header() {
                                 <label className="p-1 px-3 rounded-full bg-slate-200">{cart?.length}</label>
                             </div>
                         </PopoverTrigger>
-                        {/* <PopoverContent className="w-full">
+                        <PopoverContent className="w-full">
+                            {' '}
                             <Cart cart={cart} />
-                        </PopoverContent> */}
+                        </PopoverContent>
                     </Popover>
 
                     {/* <UserButton/> */}
