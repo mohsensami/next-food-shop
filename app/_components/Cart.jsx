@@ -17,18 +17,18 @@ function Cart({ cart }) {
         return total.toFixed(2);
     };
 
-    // const RemoveItemFromCart = (id) => {
-    //     GlobalApi.DisconnectRestroFromUserCartItem(id).then((resp) => {
-    //         console.log(resp);
-    //         if (resp) {
-    //             GlobalApi.DeleteItemFromCart(id).then((resp) => {
-    //                 console.log(resp);
-    //                 toast('Item Removed!');
-    //                 setUpdateCart(!updateCart);
-    //             });
-    //         }
-    //     });
-    // };
+    const RemoveItemFromCart = (id) => {
+        GlobalApi.DisconnectRestroFromUserCartItem(id).then((resp) => {
+            console.log(resp);
+            if (resp) {
+                GlobalApi.DeleteItemFromCart(id).then((resp) => {
+                    console.log(resp);
+                    toast('Item Removed!');
+                    setUpdateCart(!updateCart);
+                });
+            }
+        });
+    };
     return (
         <div>
             <h2 className="text-lg font-bold">{cart[0]?.restaurant?.name}</h2>
@@ -50,7 +50,7 @@ function Cart({ cart }) {
                             </div>
                             <h2 className="font-bold flex gap-2">
                                 ${item.price}
-                                {/* <X className="h-4 w-4 text-red-500" onClick={() => RemoveItemFromCart(item.id)} /> */}
+                                <X className="h-4 w-4 text-red-500" onClick={() => RemoveItemFromCart(item.id)} />
                             </h2>
                         </div>
                     ))}
