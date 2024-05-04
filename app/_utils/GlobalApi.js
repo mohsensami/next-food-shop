@@ -45,6 +45,7 @@ const GetBusiness = async (category) => {
       restroType
       slug
       workingHours
+
     }
   }  
   `;

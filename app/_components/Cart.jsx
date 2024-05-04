@@ -62,4 +62,4 @@ function Cart({ cart }) {
     );
 }
 
-export default memo(Cart);
+export default Cart;
