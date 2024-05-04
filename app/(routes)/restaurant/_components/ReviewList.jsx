@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-// import { Rating as ReactRating } from '@smastrom/react-rating';
-// import moment from 'moment';
+import { Rating as ReactRating } from '@smastrom/react-rating';
+import moment from 'moment';
 
 function ReviewList({ reviewList }) {
     return (
