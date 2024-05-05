@@ -76,7 +76,7 @@ function Checkout() {
                                 setLoading(false);
                                 toast('Order Created Successfully!');
                                 setUpdateCart(!updateCart);
-                                SendEmail();
+                                // SendEmail();
                                 router.replace('/confirmation');
                             },
                             (error) => {
@@ -152,7 +152,7 @@ function Checkout() {
                 {loading?<Loader className='animate-spin'/>:'Make Payment'} 
 
                 </Button> */}
-                        <Button onClick={addToOrder}>Payment</Button>
+
                         {total > 5 && (
                             <PayPalButtons
                                 disabled={!(username && email && address && zip) || loading}
