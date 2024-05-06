@@ -76,7 +76,7 @@ function Checkout() {
                                 setLoading(false);
                                 toast('Order Created Successfully!');
                                 setUpdateCart(!updateCart);
-                                // SendEmail();
+                                SendEmail();
                                 router.replace('/confirmation');
                             },
                             (error) => {
